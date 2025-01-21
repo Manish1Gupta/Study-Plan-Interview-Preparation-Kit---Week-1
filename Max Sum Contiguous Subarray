@@ -1,0 +1,77 @@
+//Find the contiguous subarray within an array, A of length N which has the largest sum.
+/*
+Input 1:
+A = [1, 2, 3, 4, -10]
+Input 2:
+A = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+
+Example Output
+Output 1:
+10
+Output 2:
+6
+*/
+
+// Example Explanation
+// Explanation 1:
+// The subarray [1, 2, 3, 4] has the maximum possible sum of 10.
+// Explanation 2:
+// The subarray [4,-1,2,1] has the maximum possible sum of 6.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"enter array size:"<<endl;
+    cin>>n;
+     int nums[n];
+     cout<<"enter array elements are:"<<endl;
+     for(int i=0;i<n;i++){
+        cin>>nums[i];
+     }
+     cout<<endl;
+
+     cout<<"Array elements are:"<<" =";
+     for(int i=0;i<n;i++){
+        cout<<nums[i]<<" ";
+     }
+     cout<<endl;
+     
+       int sum=0;
+       int maxi=nums[0];
+       for(int i=0;i<n;i++){
+        sum=sum+nums[i];
+        maxi=max(sum,maxi);
+        if(sum<0){
+            sum=0;
+        }
+       }
+       cout<<"maximum Sum are:"<<" "<<maxi<<endl;
+    
+return 0;
+}
+
+
+
+....................................................................................................................................................
+....................................................................................................................................................
+
+
+
+int sum = 0;
+int maxii = A[0];  // Initialize `maxii` to the first element of the array
+
+for (int i = 0; i < A.size(); i++) {
+    sum = sum + A[i];         // Add the current element to `sum`
+    maxii = max(sum, maxii);  // Update `maxii` if `sum` is greater than `maxii`
+    if (sum < 0) {
+        sum = 0;  // Reset `sum` to 0 if it becomes negative
+    }
+}
+return maxii;
+
+
+....................................................................................................................................................
+....................................................................................................................................................
